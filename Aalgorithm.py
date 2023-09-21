@@ -29,8 +29,9 @@ grid = np.array([
 start = (0,0)
 goal = (0,19)
 
-def heuristic(a,b):
-    return np.sqrt((b[0]-a[0]) ** 2 + (b[1]-a[1]) ** 2)
+
+def heuristic(a, b):
+    return abs(b[0] - a[0]) + abs(b[1] - a[1])
 
 def Astar(array, start, goal):
     neighbors = [(0,1), (0,-1), (1,0), (-1,0), (1,1), (1,-1), (-1,1), (-1,-1)]
